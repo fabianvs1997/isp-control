@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: isp-control
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/ispcontrol}
+    username: ${DATABASE_USER:ispcontrol}
+    password: ${DATABASE_PASSWORD:local_dev_only}
+  flyway:
+    enabled: true
+  jackson:
+    time-zone: America/Mexico_City
+server:
+  port: ${PORT:8080}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
